@@ -35,10 +35,5 @@ main .profile-picture {
     padding: 5px;
 }
 
-/*@include color-mode(dark) {*/
-/*    main .profile-picture {*/
-/*        background-color: white;*/
-/*    }*/
-/*}*/
 
 

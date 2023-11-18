@@ -10,16 +10,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="p-3 text-center border-bottom">
-<h1 class="mb-0">Student Explorer</h1>
+<header class="p-2 text-center border-bottom">
+<h1 class="mb-0 text-primary-emphasis">
+    <i class="bi bi-person-plus"></i>
+    Student Explorer</h1>
 </header>
-<main>
+<main class="container-fluid">
     <div class="row">
         <div class="col-sm-4">
-            <h4 mt-2>Student Details</h4>
+            <h4 mt-2> Student Details</h4>
             <form action="#" method="POST" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="txt-name" class="form-label">Student Name<b class="text-danger">*</b></label>
@@ -33,7 +36,7 @@
                     <label for="img-student" class="form-label">Student Picture</label>
                     <input name="picture" class="form-control" type="file" id="img-student" accept="image/*">
                 </div>
-                <div class="mb-2">
+                <div class="mb-3">
                     <button class="btn btn-primary">Save</button>
                     <button type="reset" class="btn btn-warning">Clear</button>
                 </div>
