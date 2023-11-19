@@ -3,23 +3,17 @@
 }
 
 body {
-font-family: 'ubuntu','sans-serif';
+    font-family: 'Roboto', sans-serif;
 }
 
 main table th:first-child,
 main table td:first-child {
-    width: 150px;
+    width: 100px;
 }
 
 main table th:nth-child(2),
 main table td:nth-child(2) {
     width: 70px;
-}
-
-main table th:last-child,
-main table td:last-child {
-    width: 50px;
-    font-size: 26px;
 }
 
 main table td:last-child > i:hover{
@@ -28,12 +22,10 @@ main table td:last-child > i:hover{
 
 main .profile-picture {
     width: 80px;
+    height: 80px;
     background-color: lightgray;
     object-fit: contain;
     background-position: center;
-    border-radius: 20px;
+    border-radius: 50%;
     padding: 5px;
 }
-
-
-

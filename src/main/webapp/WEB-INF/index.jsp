@@ -1,3 +1,4 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,8 +23,8 @@
 <main class="container-fluid">
     <div class="row">
         <div class="col-sm-4">
-            <h4 mt-2> Student Details</h4>
-            <form action="#" method="POST" enctype="multipart/form-data">
+            <h4 class="mt-2"> Student Details</h4>
+            <form action="students" method="POST" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="txt-name" class="form-label">Student Name<b class="text-danger">*</b></label>
                     <input name="name" required pattern="^[A-Za-z ]+$" type="text" class="form-control" id="txt-name" placeholder="Ex: Achinda Mihiruk">
@@ -43,36 +44,40 @@
             </form>
         </div>
         <div class="col-sm-8">
-            <table class="table table-hover">
+            <table class="table mt-2 table-bordered table-hover">
                 <thead>
                 <tr>
-                    <th class="text-center">Picture</th>
+                    <th class="text-center">PICTURE</th>
                     <th class="text-center">ID</th>
-                    <th>Name</th>
-                    <th>Address</th>
-                    <th class="text-center"></th>
+                    <th>NAME</th>
+                    <th>ADDRESS</th>
                 </tr>
                 </thead>
-                <tbody class="table-group-divider">
-                <tr>
-                    <td class="text-center"><img class="profile-picture" src="img/avatar.png" alt="profile pic"></td>
-                    <td class="text-center">1</td>
-                    <td>Otto</td>
-                    <td>Gampaha</td>
-                    <td class="text-center"></td>
-                </tr>
-                <tr>
-                    <td class="text-center"><img class="profile-picture" src="img/avatar.png" alt="profile pic"></td>
-                    <td class="text-center">2</td>
-                    <td>batto</td>
-                    <td>Panadura</td>
-                    <td class="text-center"></td>
-                </tr>
+                <tbody>
+                <c:forEach var="student" items="${studentList}">
+                    <tr>
+                        <td class="text-center">
+                            <img class="profile-picture"
+                                 src="${empty student.pictureUrl ? 'img/avatar.png': student.pictureUrl}">
+                        </td>
+                        <td class="text-center">${student.id}</td>
+                        <td>${student.name}</td>
+                        <td>${student.address}</td>
+                    </tr>
+                </c:forEach>
                 </tbody>
+                <c:if test="${empty studentList}">
+                    <tfoot>
+                    <tr>
+                        <td colspan="4" class="text-center">
+                            There are no student records to display
+                        </td>
+                    </tr>
+                    </tfoot>
+                </c:if>
             </table>
         </div>
     </div>
 </main>
-<footer></footer>
 </body>
 </html>
